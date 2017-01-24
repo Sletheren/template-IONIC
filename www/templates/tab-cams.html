@@ -1,0 +1,18 @@
+<ion-view view-title="Caméras">
+	
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="cam in cams" type="item-text-wrap" href="#/tab/cams/{{cam.id}}" ng-switch="{{cam.state}}">
+			<img ng-switch-when="1" src="../img/on.jpg">
+			<img ng-switch-when="0" src="../img/off.jpg">
+        <h2>{{cam.name}}</h2>
+        <p>{{cam.lastText}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(cam)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
